@@ -71,8 +71,10 @@ public interface WxCpApiPathConsts {
   interface Department {
     String DEPARTMENT_CREATE = "/cgi-bin/department/create";
     String DEPARTMENT_UPDATE = "/cgi-bin/department/update";
+    String DEPARTMENT_GET = "/cgi-bin/department/get?id=%d";
     String DEPARTMENT_DELETE = "/cgi-bin/department/delete?id=%d";
     String DEPARTMENT_LIST = "/cgi-bin/department/list";
+    String DEPARTMENT_SIMPLE_LIST = "/cgi-bin/department/simplelist";
   }
 
   interface Media {
@@ -89,6 +91,10 @@ public interface WxCpApiPathConsts {
   }
 
   interface Oa {
+    /**
+     * 打卡
+     * https://developer.work.weixin.qq.com/document/path/94204
+     */
     String GET_CORP_CHECKIN_OPTION = "/cgi-bin/checkin/getcorpcheckinoption";
     String GET_CHECKIN_DATA = "/cgi-bin/checkin/getcheckindata";
     String GET_CHECKIN_OPTION = "/cgi-bin/checkin/getcheckinoption";
@@ -96,12 +102,32 @@ public interface WxCpApiPathConsts {
     String GET_CHECKIN_MONTH_DATA = "/cgi-bin/checkin/getcheckin_monthdata";
     String GET_CHECKIN_SCHEDULE_DATA = "/cgi-bin/checkin/getcheckinschedulist";
     String SET_CHECKIN_SCHEDULE_DATA = "/cgi-bin/checkin/setcheckinschedulist";
-    String GET_APPROVAL_INFO = "/cgi-bin/oa/getapprovalinfo";
-    String GET_APPROVAL_DETAIL = "/cgi-bin/oa/getapprovaldetail";
-    String GET_DIAL_RECORD = "/cgi-bin/dial/get_dial_record";
+
+    /**
+     * 审批
+     * https://developer.work.weixin.qq.com/document/path/91956
+     */
+    String COPY_TEMPLATE = "/cgi-bin/oa/approval/copytemplate";
     String GET_TEMPLATE_DETAIL = "/cgi-bin/oa/gettemplatedetail";
     String APPLY_EVENT = "/cgi-bin/oa/applyevent";
+    String GET_APPROVAL_INFO = "/cgi-bin/oa/getapprovalinfo";
+    String GET_APPROVAL_DETAIL = "/cgi-bin/oa/getapprovaldetail";
+    String GET_APPROVAL_DATA = "/cgi-bin/oa/getapprovaldata";
 
+    String GET_CORP_CONF = "/cgi-bin/oa/vacation/getcorpconf";
+    String GET_USER_VACATION_QUOTA = "/cgi-bin/oa/vacation/getuservacationquota";
+    String SET_ONE_USER_QUOTA = "/cgi-bin/oa/vacation/setoneuserquota";
+
+    /**
+     * 公费电话
+     * https://developer.work.weixin.qq.com/document/path/93662
+     */
+    String GET_DIAL_RECORD = "/cgi-bin/dial/get_dial_record";
+
+    /**
+     * 日程
+     * https://developer.work.weixin.qq.com/document/path/93624
+     */
     String CALENDAR_ADD = "/cgi-bin/oa/calendar/add";
     String CALENDAR_UPDATE = "/cgi-bin/oa/calendar/update";
     String CALENDAR_GET = "/cgi-bin/oa/calendar/get";
@@ -113,7 +139,11 @@ public interface WxCpApiPathConsts {
     String SCHEDULE_DEL = "/cgi-bin/oa/schedule/del";
     String SCHEDULE_LIST = "/cgi-bin/oa/schedule/get_by_calendar";
 
-    String COPY_TEMPLATE = "/cgi-bin/oa/approval/copytemplate";
+    /**
+     * 审批流程引擎
+     * https://developer.work.weixin.qq.com/document/path/90269
+     */
+    String GET_OPEN_APPROVAL_DATA = "/cgi-bin/corp/getopenapprovaldata";
   }
 
   interface Living {
@@ -250,6 +280,11 @@ public interface WxCpApiPathConsts {
     String GROUP_WELCOME_TEMPLATE_DEL = "/cgi-bin/externalcontact/group_welcome_template/del";
 
     String UPLOAD_ATTACHMENT = "/cgi-bin/media/upload_attachment";
+
+
+    String ADD_INTERCEPT_RULE = "/cgi-bin/externalcontact/add_intercept_rule";
+    String UPDATE_INTERCEPT_RULE = "/cgi-bin/externalcontact/update_intercept_rule";
+    String DEL_INTERCEPT_RULE = "/cgi-bin/externalcontact/del_intercept_rule";
 
   }
 

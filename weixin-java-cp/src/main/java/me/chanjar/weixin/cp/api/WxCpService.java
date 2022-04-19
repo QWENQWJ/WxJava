@@ -386,7 +386,7 @@ public interface WxCpService extends WxService {
   WxCpMessageService getMessageService();
 
   /**
-   * Gets oa service.
+   * 获取OA相关接口的服务类对象.
    *
    * @return the oa service
    */
@@ -398,6 +398,13 @@ public interface WxCpService extends WxService {
    * @return the Living service
    */
   WxCpLivingService getLivingService();
+
+  /**
+   * 获取OA 自建应用相关接口的服务类对象
+   *
+   * @return
+   */
+  WxCpOaAgentService getOaAgentService();
 
   /**
    * 获取会话存档相关接口的服务类对象
